@@ -13,5 +13,7 @@ In order to run the react frontend, follow these steps in the terminal,
 
 For the backend, import the backend folder inside the java IDE.
 
+MySQL Database Name - issues
+
 Swagger Definition API
 http://localhost:8080/swagger-ui/index.html
