@@ -77,22 +77,29 @@ const Home = () => {
 
     e.preventDefault();
 
-    const currentdate = new Date();
-    const dateonly = currentdate.toLocaleDateString();
-
-    const addIssue={
-      issueDate: dateonly,
-      issueDescription: desc,
-      issueName: subject,
-      issueStatus: "Open",
-      issueType: issueType
+    if(desc != '' && subject!= '' && issueType!=''){
+      const currentdate = new Date();
+      const dateonly = currentdate.toLocaleDateString();
+  
+      const addIssue={
+        issueDate: dateonly,
+        issueDescription: desc,
+        issueName: subject,
+        issueStatus: "Open",
+        issueType: issueType
+      }
+  
+      await axios.post("http://localhost:8080/api/v1/issue", addIssue).then(response => {
+        // console.log(response);
+        getIssueData();
+        getPieData();
+      })
     }
 
-    await axios.post("http://localhost:8080/api/v1/issue", addIssue).then(response => {
-      // console.log(response);
-      getIssueData();
-      getPieData();
-    })
+    else{
+      alert('Please fill all the fields')
+    }
+
   }
 
   async function getIssueData(){
