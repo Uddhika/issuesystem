@@ -3,8 +3,6 @@ This entire project is divided into two folders.
 1. frontend
 2. backend
 
-1. frontend
-
 In order to run the react frontend, follow these steps in the terminal,
 
 1. Access the frontend folder.
