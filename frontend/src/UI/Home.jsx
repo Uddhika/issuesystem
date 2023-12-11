@@ -361,7 +361,7 @@ const Home = () => {
             </div>
             <div>
               <select className='rounded-md w-full border border-slate-300 p-1.5 font-light text-sm' onChange={(e) => setstatussearch(e.target.value)}>
-                  <option value="">Select Issue Status</option>
+                  <option value="">All</option>
                   <option value="Open">Open</option>
                   <option value="In-Progress">In-Progress</option>
                   <option value="Waiting On Client">Waiting On Client</option>
