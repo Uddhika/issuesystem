@@ -17,3 +17,5 @@ MySQL Database Name - issues
 
 Swagger Definition API
 http://localhost:8080/swagger-ui/index.html
+
+Please watch the 'Project Demostration final' video to see how this system works.
