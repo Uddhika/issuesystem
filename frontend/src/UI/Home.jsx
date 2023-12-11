@@ -3,6 +3,7 @@ import Footer from '../components/Footer'
 import axios from 'axios';
 import Modal from 'react-modal';
 import PieChart from '../components/PieChart';
+import toast, { Toaster } from "react-hot-toast";
 
 const customStyles = {
   content: {
@@ -54,6 +55,7 @@ const Home = () => {
       // console.log(response);
       getIssueData();
       getPieData();
+      toast.success("Issue Status Updated Successfully");
     })
     setmodalupdate(false);
   }
@@ -93,11 +95,13 @@ const Home = () => {
         // console.log(response);
         getIssueData();
         getPieData();
+        toast.success("Issue Added Successfully");
       })
     }
 
     else{
-      alert('Please fill all the fields')
+      // alert('Please fill all the fields')
+      toast.error("Please fill all the fields");
     }
 
   }
@@ -114,6 +118,7 @@ const Home = () => {
       // console.log(response);
       getIssueData();
       getPieData();
+      toast.success("Issue Deleted Successfully");
     })
     setmodaldelete(false);
   }
@@ -316,7 +321,7 @@ const Home = () => {
                 >
                   Submit
                 </button>
-                
+                <Toaster />
             </div>
             </form>
   
