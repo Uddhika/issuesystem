@@ -21,6 +21,7 @@ Modal.setAppElement('body');
 const Home = () => {
 
   const [search, setsearch] = useState('');
+  const [statussearch, setstatussearch] = useState('');
 
   const[subject, setSubject] = useState('');
   const[desc, setDesc] = useState('');
@@ -162,6 +163,14 @@ const Home = () => {
     })
   }
   
+  const filteredData = issueTableData.filter(item => {
+    const searchName = search.toLowerCase() === ''
+    ? item : item.issueName.toLowerCase().includes(search);
+    const istatus = statussearch.toLowerCase() === ''
+    ? item : item.issueStatus.includes(statussearch);
+    return searchName && istatus;
+  });
+
   useEffect(() => {
     getIssueData();
     getPieData();
@@ -338,7 +347,8 @@ const Home = () => {
 
         <div className='mx-auto sm:max-w-5xl'>
           
-            <div className="mb-5">
+          <div className='flex gap-10'>
+            <div className="mb-5 flex-grow">
                 <input
                   type="text"
                   name="issue-search"
@@ -349,7 +359,16 @@ const Home = () => {
                   onChange={(e) => {setsearch(e.target.value)}}
                 />
             </div>
-          
+            <div>
+              <select className='rounded-md w-full border border-slate-300 p-1.5 font-light text-sm' onChange={(e) => setstatussearch(e.target.value)}>
+                  <option value="">Select Issue Status</option>
+                  <option value="Open">Open</option>
+                  <option value="In-Progress">In-Progress</option>
+                  <option value="Waiting On Client">Waiting On Client</option>
+                  <option value="Resolved">Resolved</option>
+              </select>
+            </div>
+          </div>
         <table className="table-auto sm:w-full">
         <thead className=''>
           <tr className='bg-slate-600 text-white text-center'>
@@ -362,10 +381,7 @@ const Home = () => {
             <th></th>
           </tr>
         </thead>
-        { issueTableData.filter((item) => {
-          return search.toLowerCase() === ''
-          ? item : item.issueName.toLowerCase().includes(search);
-        }).map((item, index) => (
+        { filteredData.map((item, index) => (
         <tbody key={item.id}>
             <tr className='text-left border-b'>
                 <td className='py-4'>{item.id}</td>
