@@ -3,8 +3,6 @@ This entire project is divided into two folders.
 1. frontend
 2. backend
 
-1. frontend
-
 In order to run the react frontend, follow these steps in the terminal,
 
 1. Access the frontend folder.
@@ -12,6 +10,8 @@ In order to run the react frontend, follow these steps in the terminal,
 3. Run the front end of the project by 'npm run dev' (Make sure to run the frontend after run the backend as well)
 
 For the backend, import the backend folder inside the java IDE.
+
+Java Version - 21
 
 MySQL Database Name - issues
 
