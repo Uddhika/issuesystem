@@ -14,6 +14,7 @@ For the backend, import the backend folder inside the java IDE.
 Java Version - 21
 
 MySQL Database Name - issues
+Replace the password with your mysql root access password in 'application.properties' file in the backend.
 
 Swagger Definition API
 http://localhost:8080/swagger-ui/index.html
