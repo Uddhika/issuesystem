@@ -9,6 +9,7 @@ In order to run the react frontend, follow these steps in the terminal,
 2. Then type 'npm install'.
 3. Run the front end of the project by 'npm run dev' (Make sure to run the frontend after run the backend as well)
 
+
 For the backend, import the backend folder inside the java IDE.
 
 Java Version - 21
